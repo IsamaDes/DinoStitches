@@ -1,0 +1,29 @@
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: <CLIENT-ID>
+            client-secret: <CLIENT-SECRET>
+  datasource:
+    username: postgres
+    password: 1234
+    url: jdbc:postgresql://localhost:5433/DinoStitch3
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# Add the following in your application.properties or application.yml
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+server:
+  port: 8083
+sha512:
+  string: "20872b9f319acca22dc721f6df8d849bbfb773271c1cfe3a59a6fea37c7451ea4da53d626be7c8816d94f7d3db1bd6ad4d3eb08bf54124b3c14a12cd0c50a44d"
+CLIENT:
+  ID: <CLIENT-ID>

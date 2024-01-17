@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app:
+    build: ./
+    container_name: DinoStitch2-app
+    ports:
+      - 8083:8083
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5433/DinoStitch2DB
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING.DATASOURCE.PASSWORD: Password
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    container_name: postgresDB
+    ports:
+      - 5433:5433
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: DinoStitch2DB
+    networks:
+      - rest-api
+networks:
+  rest-api:
+    driver: bridge

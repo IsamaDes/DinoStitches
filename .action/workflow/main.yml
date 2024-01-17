@@ -1,0 +1,32 @@
+name: Build $ Deploy for DinoStitches
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  build-deploy:
+    name: Build an Deploy for SmartQuiz
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out the Code
+        uses: actions/checkout@v3
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: 17
+
+      #      - name: Unit Tests
+      #        run: mvn -B test --file pom.xml
+
+      - name: Build the application
+        run: |
+          mvn clean
+          mvn -B package --file pom.xml
