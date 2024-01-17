@@ -24,6 +24,6 @@ logging:
 server:
   port: 8083
 sha512:
-  string: "20872b9f319acca22dc721f6df8d849bbfb773271c1cfe3a59a6fea37c7451ea4da53d626be7c8816d94f7d3db1bd6ad4d3eb08bf54124b3c14a12cd0c50a44d"
+  string: "c44b35832bae73d52c0af8232cb709cf73af5401e512db85d05f295d40c4ac7dab553ab75a0bfb2e53e090219ecde9caea045d49c8a302290546b21f65da91dd"
 CLIENT:
   ID: <CLIENT-ID>
